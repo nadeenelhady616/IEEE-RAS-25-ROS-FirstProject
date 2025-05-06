@@ -1,0 +1,27 @@
+"""
+Configuration settings for the University Management System.
+"""
+
+# Maximum number of courses a student can register for
+MAX_COURSES = 5
+
+# Grade point mapping
+GRADE_POINTS = {
+    'A+': 4.0,
+    'A': 4.0,
+    'A-': 3.7,
+    'B+': 3.3,
+    'B': 3.0,
+    'B-': 2.7,
+    'C+': 2.3,
+    'C': 2.0,
+    'C-': 1.7,
+    'D+': 1.3,
+    'D': 1.0,
+    'F': 0.0
+}
+
+# Minimum attendance percentage required
+MIN_ATTENDANCE = 75
+
+print("Config module loaded successfully")
