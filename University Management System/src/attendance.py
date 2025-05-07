@@ -1,7 +1,7 @@
 from datetime import datetime
 from student_system import Student
 from course import Course
-
+import json
 class Attendance:
 
     #mark attendance of a student in a specific course in Professor mode
