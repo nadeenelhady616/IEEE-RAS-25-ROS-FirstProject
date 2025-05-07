@@ -39,14 +39,14 @@ def register_course(filename, student, course):
     if student.student_id not in data['students']:
         print(f"Student with ID {student.student_id} not found.")
         return
-    if course.course_id in student.courses_reg:
+    if course.course_code in student.courses_reg:
         print(f"Already registered for {course.course_name}.")
         return
     if student.level < course.level:
         print(f"Course {course.course_name} is not available for your level.")
         return
     student.register_course(course)
-    data['students'][student.student_id]['courses'].append(course.course_id)
+    data['students'][student.student_id]['courses'].append(course.course_code)
     with open(filename, 'w') as file:
         json.dump(data, file, indent=4)
     print(f"Registered for {course.course_name} successfully.")
@@ -60,11 +60,11 @@ def drop_course(filename, student, course):
     if student.student_id not in data['students']:
         print(f"Student with ID {student.student_id} not found.")
         return
-    if course.course_id not in student.courses_reg:
+    if course.course_code not in student.courses_reg:
         print(f"Not registered for {course.course_name}.")
         return
     student.drop_course(course)
-    data['students'][student.student_id]['courses'].remove(course.course_id)
+    data['students'][student.student_id]['courses'].remove(course.course_code)
     with open(filename, 'w') as file:
         json.dump(data, file, indent=4)
     print(f"Dropped {course.course_name} successfully.")
